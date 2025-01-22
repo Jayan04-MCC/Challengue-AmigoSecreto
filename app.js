@@ -43,7 +43,13 @@ function sortearAmigo(){
     let amigoSorteado = listaAmigos[Math.floor(Math.random() * listaAmigos.length)];
     console.log(amigoSorteado);
     mostrarAmigos('resultado',amigoSorteado);
-    
+    mostrarAmigos('listaAmigos');
+    listaAmigos.forEach(element => {
+        if(element === amigoSorteado){
+            listaAmigos.splice(listaAmigos.indexOf(element),1);// elimiar el elemento sorteado
+        }
+    });
+
 }
 
 function limpiarEntrada(){
